@@ -1,0 +1,16 @@
+<div class="pagination">
+	<span class="step-links">
+    {% if songs.has_previous %}
+      <a class="button btn btn-info" href="?page={{ songs.previous_page_number }}">previous</a>
+    {% endif %}
+
+    <span class="current">
+        Page {{ songs.number }} of {{ songs.paginator.num_pages }}.
+    </span>
+
+    {% if songs.has_next %}
+		<a class="next" href="?{% url_replace page=songs.next_page_number%}">Next</a>
+        <a class="button btn btn-info" href="?page={{ songs.next_page_number }}">next</a>
+    {% endif %}
+	</span>
+</div>
